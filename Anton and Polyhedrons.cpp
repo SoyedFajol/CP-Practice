@@ -20,7 +20,7 @@ int main()
     }
     else if(arr[i]=="Octahedron")
     {
-        count+=6;
+        count+=8;
     }
     else if(arr[i]=="Dodecahedron")
     {

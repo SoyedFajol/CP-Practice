@@ -28,44 +28,44 @@ int main()
         }
     }
 
-        min_t=d;
-        while(a!=0 && c!=0)
+    min_t=d;
+    while(a!=0 && c!=0)
+    {
+        c=c-1;
+        a=a-1;
+        min_t=min_t+1;
+    }
+    if(a==0 && c!=0)
+    {
+        min_t=min_t+c;
+        c=0;
+    }
+    min_t=min_t+ b/2;
+    if(b%2!=0)
+    {
+        if(a<=2)
         {
-            c=c-1;
-            a=a-1;
+            min_t=min_t+1;
+            b=0;
+            a=0;
+        }
+        else
+        {
+            a=a-2;
+            min_t=min_t+1;
+            b=0;
+        }
+    }
+    if(a!=0)
+    {
+        min_t=min_t+ a/4;
+        if(a%4!=0)
+        {
             min_t=min_t+1;
         }
-        if(a==0 && c!=0)
-        {
-            min_t=min_t+c;
-            c=0;
-        }
-        min_t=min_t+b/2;
-        if(b%2!=0)
-        {
-            if(a<=2)
-            {
-                min_t=min_t+1;
-                b=0;
-                c=0;
-            }
-            else
-            {
-                a=a+2;
-                min_t=min_t+1;
-                b=0;
-            }
-            if(a!=0)
-            {
-                min_t=min_t+a/4;
-                if(a%4!=0)
-                {
-                    min_t=min_t+1;
-                }
-            }
-        }
-        cout<<min_t;
     }
+    cout<<min_t<<endl;
+}
 
 
 

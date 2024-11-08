@@ -1,12 +1,12 @@
 #include<iostream>
 #include<string>
 using namespace std;
-
 int main()
 {
     string s;
     cin>>s;
     int c=0,d=0;
+
     for(int i=1; i<s.size(); i++)
     {
         if(islower(s[i]))
@@ -14,6 +14,15 @@ int main()
             c++;
         }
     }
+
+    for(int i=0; i<s.size(); i++)
+    {
+        if(isupper(s[i]))
+        {
+            d++;
+        }
+    }
+
     if(islower(s[0]) && c==0)
     {
         s[0]=toupper(s[0]);
@@ -22,8 +31,20 @@ int main()
             s[i]=tolower(s[i]);
         }
         cout<<s;
-    }else
+    }
+
+    else if(d==s.size())
+    {
+        for(int i=0; i<s.size(); i++)
+        {
+            s[i]=tolower(s[i]);
+        }
+        cout<<s;
+    }
+
+    else
     {
         cout<<s;
     }
+    return 0;
 }
